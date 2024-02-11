@@ -200,12 +200,10 @@ main {
   
     & h2 {
       color: var(--Grayish-blue);
-      /* margin-bottom: 10px; */
       font-weight: 800;
     }
 
     & h3 {
-      /* font-size: 125%; */
       color: #000000;
       font-weight: 700;
       line-height: 2.4;
@@ -275,6 +273,7 @@ main {
   display: block !important;
 }
 .header {
+  
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -296,11 +295,12 @@ main {
   right: 0;
   top: 0;
   z-index: -10;
+  
 }
 .menu-items {
   display: none;
   position: fixed;
-  right: 0;
+  /* right: 0; */
   top: 0;
   z-index: 9999999;
   width: 70%;
@@ -439,3 +439,24 @@ main {
   color: #000000;
 }
   
+
+
+
+
+
+
+
+
+
+.close-menu {
+  right: -100;
+  background-color: transparent !important;
+  animation: close-sidebar .6s;
+}
+
+.open-menu {
+  display: block;
+  right: 0;
+  background-color: red;
+  animation: open-sidebar .6s;
+}
