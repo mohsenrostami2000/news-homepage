@@ -1,29 +1,19 @@
 // select buttons
-
 const openMenu = document.querySelector('.menu-img');
 const closeMenu = document.querySelector('.close-menu-img');
 
-console.log(openMenu, closeMenu)
-
 // select elements
 const menuItesm = document.querySelector('.menu-items');
-const navShaddow = document.querySelector('.nav-bg');
+const bgShaddow = document.querySelector('.menu-bg');
 
-console.log(navShaddow, menuItesm)
+// add event to buttons
+openMenu.addEventListener("click", ()=> {
+    menuItesm.classList.add("open-sidebar");
+    bgShaddow.style.display = "block";
+    menuItesm.classList.remove("close-sidebar");
+});
 
-window.addEventListener('click', (e)=> {
-    console.log(e.target)
-        // open menu
-        menuItesm.classList.add('open-menu')
-        navShaddow.style.zIndex = '10'
-    
-        // close menu
-    closeMenu.addEventListener('click', ()=> {
-        menuItesm.classList.add('close-menu')
-        navShaddow.style.zIndex = '-10'
-    })
-    
-})
-// if(window.screen.width <= 912){
-//     })
-// }
+closeMenu.addEventListener("click", ()=> {
+    menuItesm.classList.add("close-sidebar");
+    bgShaddow.style.display = "none";
+});
