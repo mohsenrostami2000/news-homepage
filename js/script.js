@@ -6,14 +6,37 @@ const closeMenu = document.querySelector('.close-menu-img');
 const menuItesm = document.querySelector('.menu-items');
 const bgShaddow = document.querySelector('.menu-bg');
 
-// add event to buttons
-openMenu.addEventListener("click", ()=> {
-    menuItesm.classList.add("open-sidebar");
-    bgShaddow.style.display = "block";
-    menuItesm.classList.remove("close-sidebar");
+window.addEventListener('DOMContentLoaded', () => {
+    openSideBar();
+    closeSideBar();
+    checkScreenSize();
 });
 
-closeMenu.addEventListener("click", ()=> {
-    menuItesm.classList.add("close-sidebar");
-    bgShaddow.style.display = "none";
-});
+// open side-bar
+function openSideBar() {
+    
+    openMenu.addEventListener("click", ()=> {
+        menuItesm.classList.add("open-sidebar");
+        bgShaddow.style.display = "block";
+        menuItesm.classList.remove("close-sidebar");
+    });
+};
+
+// close side-bar
+function closeSideBar() {
+    closeMenu.addEventListener("click", ()=> {
+        menuItesm.classList.add("close-sidebar");
+        bgShaddow.style.display = "none";
+    });
+}
+
+// hide sidebar menu on tablet screen
+function checkScreenSize() {
+    window.addEventListener('resize', () => {
+        if (screen.width > 767) {
+            menuItesm.classList.remove('open-sidebar');
+            menuItesm.classList.remove('close-sidebar');
+            bgShaddow.style.display = "none";
+        }
+    });
+}
